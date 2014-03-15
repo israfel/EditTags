@@ -1,0 +1,34 @@
+﻿<Window x:Class="EditTags.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tags Edit ver 1.1" Height="378" Width="559"
+        Drop="OnDrop" AllowDrop="True" ResizeMode="CanMinimize">
+    <Grid AllowDrop="True">
+        <!--为什么这里要是true-->
+        <Image x:Name="imgImage" HorizontalAlignment="Left" Height="246" Margin="30,58,0,0" VerticalAlignment="Top" Width="234" Source="Resources/default_img.png" MouseUp="OnImgMouseUp"/>
+        <StackPanel x:Name="tagsStackPanel" HorizontalAlignment="Left" Height="213" Margin="307,68,0,0" VerticalAlignment="Top" Width="251"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="294,30,0,0" TextWrapping="Wrap" Text="Tags：" VerticalAlignment="Top" Width="69" FontSize="18" FontFamily="Comic Sans MS"/>
+        <StackPanel x:Name="titleStackPanel" Margin="30,29,345,286" Orientation="Horizontal" Height="25">
+            <TextBlock x:Name="titleTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Title Here" VerticalAlignment="Top" FontSize="18" FontFamily="Comic Sans MS" MouseUp="OnTitleMouseUp"/>
+            <TextBox x:Name="titleTextBox" Height="23" VerticalContentAlignment="Center" Visibility="Collapsed"  Width="112" KeyDown="TitleTextBox_KeyDown" Margin="0,1" />
+            <Button x:Name="titleCommitButton" Content="确认" Click="OnTitleCommitButtonClick" Margin="11,0,0,0" Height="23" Width="37" Visibility="Collapsed"/>
+        </StackPanel>
+        <TextBox x:Name="newTag" HorizontalAlignment="Left" Height="18" Margin="307,286,0,0" Text="" VerticalAlignment="Top" Width="126" FontSize="14" KeyDown="newTag_KeyDown"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="18" Margin="438,286,0,0" VerticalAlignment="Top" Width="54" Click="AddTagButton_Click" />
+        <Button x:Name="ClearTagsButton" Content="Clear" HorizontalAlignment="Left" Height="23" Margin="401,34,0,0" VerticalAlignment="Top" Width="43" RenderTransformOrigin="0.442,0" BorderBrush="{x:Null}" Click="ClearTagsButton_Click">
+            <Button.Effect>
+                <BlurEffect Radius="3"/>
+            </Button.Effect>
+        </Button>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="136,125,0,0" VerticalAlignment="Top" Width="282" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+    </Grid>
+</Window>
